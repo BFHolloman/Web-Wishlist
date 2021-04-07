@@ -1,0 +1,70 @@
+.center {
+    display: flex;
+    justify-content: center;
+}
+.padding{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+}
+#homecolor{
+  background: rgba(53, 53, 59, 0.5);
+  color: white;
+}
+#color{
+    color: black;
+}
+#wow {
+  --color1: orange;
+  --color2: black;
+  text-align: center;
+  font-size: 46px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color1),
+    var(--color1) 30px,
+    var(--color2) 30px,
+    var(--color2) 60px
+  );
+  background-clip: inherit;
+  color: transparent;
+  -webkit-background-clip: text;
+  animation: 40s linear 0s infinite move;
+}
+
+@keyframes move {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: 1000px;
+  }
+}#text{
+    color: white;
+ }
+#white{
+    background-color: white;
+}
+#homebg{
+   background-image: url('https://www.eschoolnews.com/files/2016/09/computer-science-768x576.jpg');
+   background-color: rgba(35, 35, 63, 0.445);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: auto;
+    height: auto;
+}
+#footbg{
+  background: rgba(53, 53, 59, 0.5);
+}
+#foot{
+  display: block;
+  text-align: center;
+    background-color: white;
+}
+
+.wishlist{
+    display: flex;
+    justify-content: center;
+}
+

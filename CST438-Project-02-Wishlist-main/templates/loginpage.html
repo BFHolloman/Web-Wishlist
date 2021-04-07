@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="static/styles.css" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<body id="homecolor" >
+<br>
+<h1 class="center">Welcome to Group D's Wishlist :)</h1>
+<br><br>
+<div class="card" id="color">
+    <div class="card-body">
+        <div class="container">
+            <br>
+            <h2 class="card-title">Please Login</h2>
+            <br>
+            <h5 class="card-subtitle mb-2 text-muted">Login or Create Account</h5>
+            <br>
+            <br>
+            {{ wtf.quick_form(loginform) }}
+            <br>
+            <button class="btn btn-outline-info"><a href="createAccount">Create Account</a></button>
+        </div>
+    </div>
+</div>
+ <br><br>
+    <footer id="foot" id="white">
+        <div id="color">
+    CST 438 Software Engineering 2021
+
+  <span> This website is used for Academic Purposes. </span><br>
+
+    <img src = "https://pajarovalleychamber.com/wp-content/themes/pajaro/img/csumb.png" width ="150", height = "150">
+    </div>
+    </footer>
+</body>
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #ffffff; }
+	</style>
+{% endblock %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="static/styles.css" rel="stylesheet" type="text/css"/>
+    <title> Create A Wishlist</title>
+{% endblock %}
+
+
+{% block content %}
+<body id ="homecolor">
+<div class="container" class ="card">
+	<div class="row pb-5">
+		<div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+		<h1 class="pt-5 pb-2" >Create A New Wishlist</h1>
+
+		{% if message %}
+
+			<!-- the form was submitted and message exists -->
+			<p class="lead"><strong>{{ message }}</strong></p>
+
+		{% else %}
+
+			<!-- the form is displayed when template opens via GET not POST -->
+
+			<!-- show flash - based on WTForms validators-->
+			{% with errors = get_flashed_messages() %}
+				{% if errors %}
+					{% for err in errors %}
+						<div class="alert alert-danger alert-dismissible"  role="alert">
+						<button type="button" class="close"  data-dismiss="alert" aria-label="Close"><span aria-hidden="true" >×</span></button>
+						{{ err }}
+						</div>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+			<!-- end of flash -->
+
+			<!-- the form, through WTForms -->
+		    {{ wtf.quick_form(listform) }}
+
+		{% endif %}
+        <br>
+        <!-- links -->
+        <center><button class="btn btn-danger"><a href="{{ url_for('homepage') }} ">Return</a></button></center>
+		</div>
+	</div>
+</div>
+ <br><br>
+    <footer id="foot" id="white">
+        <div id="color">
+    CST 438 Software Engineering 2021
+
+  <span> This website is used for Academic Purposes. </span><br>
+
+    <img src = "https://pajarovalleychamber.com/wp-content/themes/pajaro/img/csumb.png" width ="150", height = "150">
+    </div>
+
+</footer>
+    </body>
+
+{% endblock %}
